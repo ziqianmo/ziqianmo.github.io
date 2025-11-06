@@ -130,7 +130,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 # 🗺️ Visitor Map
 
-<div align="center" style="max-width:300px; margin:auto;">
+<div align="center" style="max-width:500px; margin:auto;">
   <script type="text/javascript" id="mapmyvisitors"
     src="//mapmyvisitors.com/map.js?d=itTdy_2KJyHYBQCwvo9gPuSfkzS_-k5W2GD-tNfyl6w&cl=ffffff&w=300">
   </script>
