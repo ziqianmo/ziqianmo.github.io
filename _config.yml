@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Ziqian Mo"
-description              : # "Exploring intelligent Cross-View Geo-Localization"
+description              : "Exploring intelligent Cross-View Geo-Localization"
 repository               : # "RayeRen/acad-homepage.github.io"
 google_scholar_stats_use_cdn : false
 
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Ziqian Mo(莫子谦)"
   avatar           : "images/ziqianmo.jpg"
-  bio              : "Exploring intelligent Cross-View Geo-Localization"
+  bio              : 
   location         : "Guangzhou, China"
   employer         :
   pubmed           : 

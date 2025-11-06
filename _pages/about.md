@@ -113,12 +113,12 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 
 # 🎖 Honors and Awards
-- *2025*: National Scholarship for Graduate Students (Top 2\%)
-- *2025*: First Prize in the Scholarship of Shenzhen University (Top 20\%)
-- *2024*: First Prize in the Scholarship of Shenzhen University (Top 20\%)
-- *2022*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6\%) 
-- *2021*: Third Prize in the Scholarship of Hubei University of Techonology (Top 30\%) 
-- *2020*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6\%)
+- *2025*: National Scholarship for Graduate Students (Top 2%)
+- *2025*: First Prize in the Scholarship of Shenzhen University (Top 20%)
+- *2024*: First Prize in the Scholarship of Shenzhen University (Top 20%)
+- *2022*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6%) 
+- *2021*: Third Prize in the Scholarship of Hubei University of Techonology (Top 30%) 
+- *2020*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6%)
 
 # 📖 Educations
 - *2023.09 – Present*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
@@ -128,6 +128,10 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 # 💻 Internships
 - *2025.07 - present*, Research Assistant, **HKUST-GZ**, China.
 
-<div align="center">
-<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=itTdy_2KJyHYBQCwvo9gPuSfkzS_-k5W2GD-tNfyl6w&cl=ffffff&w=a"></script>
+# 🗺️ Visitor Map
+
+<div align="center" style="max-width:300px; margin:auto;">
+  <script type="text/javascript" id="mapmyvisitors"
+    src="//mapmyvisitors.com/map.js?d=itTdy_2KJyHYBQCwvo9gPuSfkzS_-k5W2GD-tNfyl6w&cl=ffffff&w=300">
+  </script>
 </div>
