@@ -28,8 +28,10 @@ My research interests include:
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2025.07*: &nbsp;🎉 One paper is accepted by TGRS 2025.  
+- *2025.04*: &nbsp;🎉 One paper is accepted by IGARSS 2025 (Oral Presentation).  
+- *2024.12*: &nbsp;🏆 Our team wins **1st place** in the *Hyperspectral Object Tracking Challenge* organized by **IEEE GRSS WHISPERS 2024 Competition**.  
+
 
 # 📝 Publications 
 
@@ -39,6 +41,80 @@ My research interests include:
 [Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
 
 **Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+
+
+
+# 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2025</div><img src='img/ESFS.png' alt="ESFS" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[ESFS: Edge-Enhanced Feature Selection for Cross-View Geo-Localization](https://ieeexplore.ieee.org/document/11080018)  
+
+Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*  
+
+*IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2025*  
+*Corresponding author: Sen Jia*
+</div></div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IGARSS 2025 · Oral</div><img src='img/sign.png' alt="SIGN" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SIGN: Saliency-Aware Integrated Global-Local Network for Cross-View Geo-Localization (Accepted)](https://ziqianmo.github.io/sign.github.io/)  
+
+**Ziqian Mo**, Yuxi Sun, Meng Xu, Sen Jia*  
+
+*IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2025*  
+*Oral Presentation · Corresponding author: Sen Jia*
+</div></div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACCV 2024</div><img src='img/SMIF-NET.png' alt="SMIF-NET" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Spectral Modality-Aware Interactive Fusion Network for HSI Super-Resolution](https://openaccess.thecvf.com/content/ACCV2024/html/Xu_Spectral_Modality-Aware_Interactive_Fusion_Network_for_HSI_Super-Resolution_ACCV_2024_paper.html)  
+
+Meng Xu, Jiayou Mao, **Ziqian Mo**, Xiyou Fu, Sen Jia*  
+
+*Asian Conference on Computer Vision (ACCV), 2024*  
+*Corresponding author: Sen Jia*
+</div></div>
+
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">WHISPERS 2024</div><img src='img/DeSAM2.png' alt="DeSAM2" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[DeSAM2: Detection-Driven SAM2 for Hyperspectral Object Tracking](https://ieeexplore.ieee.org/abstract/document/10876417)  
+
+Wangquan He, Qi Ren, Hongtao Zhang, **Ziqian Mo**, Nanying Li, Meng Xu, Sen Jia*  
+
+*IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2024*  
+*Corresponding author: Sen Jia*
+</div></div>
+
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">WHISPERS 2024</div><img src='img/SR-CSCA.png' alt="SR-CSCA" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Spectral Reconstruction via Dual Cross-Scanning and Cross-Attention Mechanisms](https://ieeexplore.ieee.org/document/10876495)  
+
+Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*  
+
+*IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2024*  
+*Corresponding author: Meng Xu*
+</div></div>
+
+
+
+
+
+
+
+
+
 
 [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
