@@ -33,9 +33,9 @@ My research interests include:
 - *2024.12*: &nbsp;🏆 Our team wins **1st place** in the *Hyperspectral Object Tracking Challenge* organized by **IEEE GRSS WHISPERS 2024 Competition**.  
 
 
-# 📝 Publications 
+<!-- # 📝 Publications 
 
-<!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
@@ -66,7 +66,8 @@ Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*
 **Ziqian Mo**, Yuxi Sun, Meng Xu, Sen Jia*  
 
 *IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2025*  
-*Oral Presentation · Corresponding author: Sen Jia*
+*Oral Presentation*
+*Corresponding author: Sen Jia*
 </div></div>
 
 
@@ -111,29 +112,22 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 
 
-
-
-
-
-
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-</div>
-</div>
-
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
-
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2025*: National Scholarship for Graduate Students (Top 2\%)
+- *2025*: First Prize in the Scholarship of Shenzhen University (Top 20\%)
+- *2024*: First Prize in the Scholarship of Shenzhen University (Top 20\%)
+- *2022*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6\%) 
+- *2021*: Third Prize in the Scholarship of Hubei University of Techonology (Top 30\%) 
+- *2020*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6\%)
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2023.09 – Present*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
+- *2019.09 – 2023.06*, Bachelor of Science in Computer Science and Technology, **Hubei University of Technology**, Wuhan, China.
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *2025.07 - present*, Research Assistant, **HKUST-GZ**, China.
+
+<div align="center">
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=itTdy_2KJyHYBQCwvo9gPuSfkzS_-k5W2GD-tNfyl6w&cl=ffffff&w=a"></script>
+</div>
