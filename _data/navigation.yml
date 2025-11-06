@@ -18,5 +18,5 @@ main:
   - title: "Internships"
     url: "/#-internships"
 
-  - title: "Visitor Map"
-    url: "/about/#visitor-map"
+  # - title: "Visitor Map"
+  #   url: "/about/#visitor-map"
