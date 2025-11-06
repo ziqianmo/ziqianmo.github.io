@@ -55,7 +55,7 @@ Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*
 
 *IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2025*  
 *Corresponding author: Sen Jia*
-
+</div></div>
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IGARSS 2025 · Oral</div><img src='images/sign.png' alt="SIGN" width="100%"></div></div>
@@ -67,6 +67,7 @@ Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*
 
 *IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2025*  
 *Oral Presentation · Corresponding author: Sen Jia*
+</div></div>
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACCV 2024</div><img src='images/SMIF-NET.png' alt="SMIF-NET" width="100%"></div></div>
@@ -78,7 +79,7 @@ Meng Xu, Jiayou Mao, **Ziqian Mo**, Xiyou Fu, Sen Jia*
 
 *Asian Conference on Computer Vision (ACCV), 2024*  
 *Corresponding author: Sen Jia*
-
+</div></div>
 
 
 
@@ -91,7 +92,7 @@ Wangquan He, Qi Ren, Hongtao Zhang, **Ziqian Mo**, Nanying Li, Meng Xu, Sen Jia*
 
 *IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2024*  
 *Corresponding author: Sen Jia*
-
+</div></div>
 
 
 
@@ -104,7 +105,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 *IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2024*  
 *Corresponding author: Meng Xu*
-
+</div></div>
 
 
 
