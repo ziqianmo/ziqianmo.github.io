@@ -126,7 +126,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 
 # 💻 Internships
-- *2025.07 - present*, Research Assistant, **HKUST-GZ**, China.
+- *2025.07 - Present*, Research Assistant, **HKUST-GZ**, China.
 
 # 🗺️ Visitor Map
 
