@@ -49,7 +49,7 @@ My research interests include:
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2025</div><img src='images/ESFS.png' alt="ESFS" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[ESFS: Edge-Enhanced Feature Selection for Cross-View Geo-Localization](https://ieeexplore.ieee.org/document/11080018)  
+[Enhanced Spatial-Frequency Synergistic Network for Multispectral and Hyperspectral Image Fusionn](https://ieeexplore.ieee.org/document/11080018)  
 
 Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*  
 
