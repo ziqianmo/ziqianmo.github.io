@@ -28,6 +28,7 @@ My research interests include:
 
 
 # 🔥 News
+- *2026.01*: &nbsp;🎉 One paper is accepted by ICASSP 2026.  
 - *2025.07*: &nbsp;🎉 One paper is accepted by TGRS 2025.  
 - *2025.04*: &nbsp;🎉 One paper is accepted by IGARSS 2025 (Oral).  
 - *2024.12*: &nbsp;🏆 Our team wins **1st place** in the *Hyperspectral Object Tracking Challenge* organized by **IEEE GRSS WHISPERS 2024 Competition**.  
@@ -46,10 +47,24 @@ My research interests include:
 
 # 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2025</div><img src='images/ASTMNet.png' alt="ASTM" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[ASTMNet: Adaptive Spectral Token Mixer with Selective Feature Enhancement for Pansharpening]  
+
+Meng Xu, Jiayou Mao, **Ziqian Mo**, Yuxi Sun*  
+
+*International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026*  
+*Corresponding author: Yuxi Sun*
+</div></div>
+
+
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2025</div><img src='images/ESFS.png' alt="ESFS" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Enhanced Spatial-Frequency Synergistic Network for Multispectral and Hyperspectral Image Fusionn](https://ieeexplore.ieee.org/document/11080018)  
+[Enhanced Spatial-Frequency Synergistic Network for Multispectral and Hyperspectral Image Fusion](https://ieeexplore.ieee.org/document/11080018)  
 
 Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*  
 
@@ -61,7 +76,7 @@ Meng Xu, **Ziqian Mo**, Xiyou Fu, Sen Jia*
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IGARSS 2025 · Oral</div><img src='images/sign.png' alt="SIGN" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[SIGN: Saliency-Aware Integrated Global-Local Network for Cross-View Geo-Localization (Accepted)](https://ziqianmo.github.io/sign.github.io/)  
+[SIGN: Saliency-Aware Integrated Global-Local Network for Cross-View Geo-Localization](https://ziqianmo.github.io/sign.github.io/)  
 
 **Ziqian Mo**, Yuxi Sun, Meng Xu, Sen Jia*  
 
