@@ -47,7 +47,7 @@ My research interests include:
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2025</div><img src='images/ASTMNet.png' alt="ASTM" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='images/ASTMNet.png' alt="ASTM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 ASTMNet: Adaptive Spectral Token Mixer with Selective Feature Enhancement for Pansharpening  
