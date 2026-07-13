@@ -28,6 +28,7 @@ My research interests include:
 
 
 # 🔥 News
+- *2026.07*: &nbsp;🎉 One paper is accepted by ACM MM 2026.
 - *2026.01*: &nbsp;🎉 One paper is accepted by ICASSP 2026.  
 - *2025.07*: &nbsp;🎉 One paper is accepted by TGRS 2025.  
 - *2025.04*: &nbsp;🎉 One paper is accepted by IGARSS 2025 (Oral).  
@@ -46,6 +47,18 @@ My research interests include:
 
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2026</div><img src='images/S3Geo.png' alt="S3Geo" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization
+
+**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei
+
+*ACM International Conference on Multimedia (ACM MM), 2026*
+</div></div>
+
+
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='images/ASTMNet.png' alt="ASTM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
