@@ -53,9 +53,10 @@ My research interests include:
 
 S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization
 
-**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei
+**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei*
 
 *ACM International Conference on Multimedia (ACM MM), 2026*
+*Corresponding author: Jiaheng Wei*
 </div></div>
 
 
