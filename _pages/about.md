@@ -63,7 +63,7 @@ S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localizatio
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICASSP 2026</div><img src='images/ASTMNet.png' alt="ASTM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-ASTMNet: Adaptive Spectral Token Mixer with Selective Feature Enhancement for Pansharpening  
+[ASTMNet: Adaptive Spectral Token Mixer with Selective Feature Enhancement for Pansharpening](https://ieeexplore.ieee.org/abstract/document/11464395)
 
 Meng Xu, Jiayou Mao, **Ziqian Mo**, Yuxi Sun*  
 
