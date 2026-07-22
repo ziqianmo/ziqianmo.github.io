@@ -56,6 +56,7 @@ S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localizatio
 **Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei*
 
 *ACM International Conference on Multimedia (ACM MM), 2026*
+
 *Corresponding author: Jiaheng Wei*
 </div></div>
 
@@ -150,7 +151,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 - *2020*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6%)
 
 # 📖 Educations
-- *2023.09 – Present*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
+- *2023.09 – 2026.06*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
 - *2019.09 – 2023.06*, Bachelor of Science in Computer Science and Technology, **Hubei University of Technology**, Wuhan, China.
 
 
