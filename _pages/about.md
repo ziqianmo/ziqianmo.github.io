@@ -68,9 +68,11 @@ STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization
 
 S<sup>3</sup>Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization
 
-**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei
+**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei*
 
 *ACM International Conference on Multimedia (ACM MM), 2026*
+
+*Corresponding author: Jiaheng Wei*
 </div></div>
 
 
