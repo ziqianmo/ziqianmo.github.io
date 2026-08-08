@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Greetings! I’m currently a Research Assistant in the Data Science and Analytics (DSA) Thrust at the Hong Kong University of Science and Technology (Guangzhou) (HKUST-GZ), supervised by Asst. Prof. <a href="https://sites.google.com/ucsc.edu/jiahengwei" target="_blank">Jiaheng Wei (魏嘉珩)</a>. At the same time, I’m pursuing my master’s degree in Artificial Intelligence at Shenzhen University, under the supervision of Assoc. Prof. <a href="https://csse.szu.edu.cn/pages/user/index?id=1025" target="_blank">Meng Xu (徐萌)</a>, and conducting research at the <a href="http://szu-hsilab.com/" target="_blank">Hyperspectral Image Laboratory (HSI Lab)</a>. I'm on a mission to turn curiosity into impactful discoveries!
+Greetings! I’m currently a Research Assistant in the Data Science and Analytics (DSA) Thrust at the Hong Kong University of Science and Technology (Guangzhou) (HKUST-GZ), supervised by Asst. Prof. <a href="https://sites.google.com/ucsc.edu/jiahengwei" target="_blank">Jiaheng Wei (魏嘉珩)</a>. I received my master's degree in Artificial Intelligence from Shenzhen University, where I was supervised by Assoc. Prof. <a href="https://csse.szu.edu.cn/pages/user/index?id=1025" target="_blank">Meng Xu (徐萌)</a> and conducted research at the <a href="http://szu-hsilab.com/" target="_blank">Hyperspectral Image Laboratory (HSI Lab)</a>. I'm on a mission to turn curiosity into impactful discoveries!
 
 My research interests include:
 - Cross-View Geo-localization with Large Vision-Language Models (LVLMs)
@@ -59,6 +59,18 @@ STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization
 *IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2026*  
 
 *Corresponding author: Meng Xu*
+</div></div>
+
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2026</div><img src='images/S3Geo.png' alt="S3Geo" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+S<sup>3</sup>Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization
+
+**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei
+
+*ACM International Conference on Multimedia (ACM MM), 2026*
 </div></div>
 
 
@@ -150,6 +162,9 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 - *2022*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6%) 
 - *2021*: Third Prize in the Scholarship of Hubei University of Techonology (Top 30%) 
 - *2020*: Second Prize in the Scholarship of Hubei University of Techonology (Top 6%)
+
+# 🤝 Professional Service
+- *2025–2027*: Director, **Power Low-Altitude Ecosystem Subcommittee**, IEEE PES China Satellite Technical Committee on Power System Communications and Cybersecurity.
 
 # 📖 Educations
 - *2023.09 – 2026.06*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
