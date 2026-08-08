@@ -28,6 +28,7 @@ My research interests include:
 
 
 # 🔥 News
+- *2026.08*: &nbsp;🎉 One paper is accepted by TGRS 2026.
 - *2026.07*: &nbsp;🎉 One paper is accepted by ACM MM 2026.
 - *2026.01*: &nbsp;🎉 One paper is accepted by ICASSP 2026.  
 - *2025.07*: &nbsp;🎉 One paper is accepted by TGRS 2025.  
@@ -48,16 +49,16 @@ My research interests include:
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2026</div><img src='images/S3Geo.png' alt="S3Geo" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2026</div><img src='images/STAR.png' alt="STAR" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization
+STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization
 
-**Ziqian Mo**, Yang Zhang, Haosheng Tan, Ling Li, Jiaheng Wei*
+**Ziqian Mo**, Yuxi Sun, Sen Jia, Meng Xu*
 
-*ACM International Conference on Multimedia (ACM MM), 2026*
+*IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2026*  
 
-*Corresponding author: Jiaheng Wei*
+*Corresponding author: Meng Xu*
 </div></div>
 
 
