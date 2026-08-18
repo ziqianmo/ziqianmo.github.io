@@ -52,7 +52,7 @@ My research interests include:
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TGRS 2026</div><img src='images/STAR.png' alt="STAR" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization
+[STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization](https://ieeexplore.ieee.org/abstract/document/11655337)
 
 **Ziqian Mo**, Yuxi Sun, Sen Jia, Meng Xu*
 
