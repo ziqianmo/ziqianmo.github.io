@@ -17,11 +17,12 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Greetings! I’m currently a Research Assistant in the Data Science and Analytics (DSA) Thrust at the Hong Kong University of Science and Technology (Guangzhou) (HKUST-GZ), supervised by Asst. Prof. <a href="https://sites.google.com/ucsc.edu/jiahengwei" target="_blank">Jiaheng Wei (魏嘉珩)</a>. I received my master's degree in Artificial Intelligence from Shenzhen University, where I was supervised by Assoc. Prof. <a href="https://csse.szu.edu.cn/pages/user/index?id=1025" target="_blank">Meng Xu (徐萌)</a> and conducted research at the <a href="http://szu-hsilab.com/" target="_blank">Hyperspectral Image Laboratory (HSI Lab)</a>. I'm on a mission to turn curiosity into impactful discoveries!
+Greetings! I’m currently a PhD student in the Data Science and Analytics (DSA) Thrust at the Hong Kong University of Science and Technology (Guangzhou) (HKUST-GZ), supervised by Asst. Prof. <a href="https://sites.google.com/ucsc.edu/jiahengwei" target="_blank">Jiaheng Wei (魏嘉珩)</a>. I received my master’s degree in Artificial Intelligence from Shenzhen University, where I was supervised by Assoc. Prof. <a href="https://csse.szu.edu.cn/pages/user/index?id=1025" target="_blank">Meng Xu (徐萌)</a> and conducted research at the <a href="http://szu-hsilab.com/" target="_blank">Hyperspectral Image Laboratory (HSI Lab)</a>. My research interests include computer vision, embodied AI, vision-language models, and spatial intelligence. I’m passionate about turning curiosity into impactful discoveries!
 
 My research interests include:
-- Cross-View Geo-localization with Large Vision-Language Models (LVLMs)
-- Remote Sensing and Hyperspectral Image Super-Resolution
+- Embodied AI and Egocentric Vision
+- Spatial Intelligence and Multimodal Learning
+- Cross-View Geo-localization
 
 
 <!-- My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
@@ -174,7 +175,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 
 
 # 💻 Internships
-- *2025.07 - Present*, Research Assistant, **HKUST-GZ**, China.
+- *2025.07 - 2026.09*, Research Assistant, **HKUST-GZ**, China.
 
 # 🗺️ Visitor Map
 
