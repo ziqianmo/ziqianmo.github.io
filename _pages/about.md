@@ -29,12 +29,12 @@ My research interests include:
 
 
 # 🔥 News
-- *2026.08*: &nbsp;🎉 One paper is accepted by TGRS 2026.
-- *2026.07*: &nbsp;🎉 One paper is accepted by ACM MM 2026.
-- *2026.01*: &nbsp;🎉 One paper is accepted by ICASSP 2026.  
-- *2025.07*: &nbsp;🎉 One paper is accepted by TGRS 2025.  
-- *2025.04*: &nbsp;🎉 One paper is accepted by IGARSS 2025 (Oral).  
-- *2024.12*: &nbsp;🏆 Our team wins **1st place** in the *Hyperspectral Object Tracking Challenge* organized by **IEEE GRSS WHISPERS 2024 Competition**.  
+- *2026.08*: 🎉 **STAR**, our work on spatio-temporal alignment and refinement for cross-view geo-localization, was accepted by **IEEE TGRS**.
+- *2026.07*: 🎉 **S³Geo** was accepted by **ACM MM 2026**! It explores structure-semantic synergy for cross-view geo-localization.
+- *2026.01*: 🎉 **ASTMNet**, our work on adaptive spectral token mixing for pansharpening, was accepted by **ICASSP 2026**.
+- *2025.07*: 🎉 **ESFS**, our work on spatial-frequency synergy for multispectral and hyperspectral image fusion, was accepted by **IEEE TGRS**.
+- *2025.04*: 🎤 **SIGN** was accepted for an **oral presentation at IGARSS 2025**, featuring saliency-aware global-local learning for cross-view geo-localization.
+- *2024.12*: 🏆 **1st place!** Our team won the **Hyperspectral Object Tracking Challenge** at the **IEEE GRSS WHISPERS 2024 Competition**.
 
 
 <!-- # 📝 Publications 
