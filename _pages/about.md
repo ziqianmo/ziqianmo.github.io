@@ -170,7 +170,7 @@ Mingying Lin, **Ziqian Mo**, Hongtao Zhang, Xiyou Fu, Meng Xu*
 - *2025–2027*: Director, **Power Low-Altitude Ecosystem Subcommittee**, IEEE PES China Satellite Technical Committee on Power System Communications and Cybersecurity.
 
 # 📖 Educations
-- *Present*, PhD student in Data Science and Analytics (DSA), **The Hong Kong University of Science and Technology (Guangzhou)**, Guangzhou, China.  
+- *2026.09 – Present*, PhD student in Data Science and Analytics (DSA), **The Hong Kong University of Science and Technology (Guangzhou)**, Guangzhou, China.  
 - *2023.09 – 2026.06*, Master of Science in Artificial Intelligence, **Shenzhen University**, Shenzhen, China.  
 - *2019.09 – 2023.06*, Bachelor of Science in Computer Science and Technology, **Hubei University of Technology**, Wuhan, China.
 
