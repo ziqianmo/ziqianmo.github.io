@@ -273,18 +273,42 @@ em {
 }
 
 .nav-links a {
+  position: relative;
   font-size: var(--fs-2xs);
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--text);
   opacity: 0.88;
   text-decoration: none;
+  transition:
+    opacity 0.25s var(--ease-out),
+    color 0.25s var(--ease-out),
+    font-weight 0.2s var(--ease-out);
 }
 
 .nav-links a:hover {
   opacity: 1;
   color: var(--blue);
   text-decoration: none;
+}
+
+.nav-links a.is-active {
+  opacity: 1;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-links a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--blue);
+  opacity: 0.92;
+  transition: opacity 0.35s var(--ease-apple);
 }
 
 .nav-toggle {
@@ -694,11 +718,26 @@ em {
 }
 
 .feature-num {
+  display: block;
   font-size: var(--fs-2xs);
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--blue);
   margin-bottom: 14px;
+}
+
+.feature-tile.reveal .feature-num {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.72s var(--ease-apple),
+    transform 0.72s var(--ease-apple);
+  transition-delay: var(--feature-num-delay, 0.1s);
+}
+
+.feature-tile.reveal.in-view .feature-num {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .feature-tile h3 {
@@ -1460,6 +1499,17 @@ em {
 
   .news-list li.is-timeline-active time {
     transform: none !important;
+  }
+
+  .nav-links a::after {
+    transition: none !important;
+  }
+
+  .feature-tile.reveal .feature-num,
+  .feature-tile.reveal.in-view .feature-num {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .reveal,
