@@ -85,17 +85,24 @@
 
   const renderSparkline = (svg, yearGraph) => {
     if (!svg || !Array.isArray(yearGraph) || yearGraph.length < 2) return;
-    const w = 80;
-    const h = 24;
-    const pad = 2;
+    const w = 96;
+    const h = 32;
+    const padX = 2;
+    const padY = 4;
     const values = yearGraph.map((p) => p.citations);
     const max = Math.max(...values, 1);
-    const pts = yearGraph.map((p, i) => {
-      const x = pad + (i / (yearGraph.length - 1)) * (w - pad * 2);
-      const y = h - pad - (p.citations / max) * (h - pad * 2);
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    const coords = yearGraph.map((p, i) => {
+      const x = padX + (i / (yearGraph.length - 1)) * (w - padX * 2);
+      const y = h - padY - (p.citations / max) * (h - padY * 2);
+      return { x, y };
     });
-    svg.innerHTML = `<polyline points="${pts.join(" ")}" />`;
+    const linePts = coords.map((c) => `${c.x.toFixed(1)},${c.y.toFixed(1)}`).join(" ");
+    const areaPts = [
+      `${padX},${h - padY}`,
+      ...coords.map((c) => `${c.x.toFixed(1)},${c.y.toFixed(1)}`),
+      `${w - padX},${h - padY}`,
+    ].join(" ");
+    svg.innerHTML = `<polygon class="hero-scholar-spark-fill" points="${areaPts}" /><polyline class="hero-scholar-spark-line" points="${linePts}" />`;
   };
 
   const titleMatchScore = (cardNorm, paperNorm) => {
@@ -173,7 +180,7 @@
       if (!links || card.querySelector(".pub-cited")) return;
       const span = document.createElement("span");
       span.className = "pub-cited";
-      span.innerHTML = `Cited by <strong>${cites}</strong>`;
+      span.innerHTML = `Cited by&nbsp;<strong>${cites}</strong>`;
       links.appendChild(span);
     });
   };
