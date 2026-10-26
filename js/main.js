@@ -98,12 +98,31 @@
     svg.innerHTML = `<polyline points="${pts.join(" ")}" />`;
   };
 
+  const titleMatchScore = (cardNorm, paperNorm) => {
+    if (!cardNorm || !paperNorm) return 0;
+    if (paperNorm.includes(cardNorm) || cardNorm.includes(paperNorm)) return 88;
+    const cardWords = cardNorm.split(" ").filter((w) => w.length > 3);
+    const paperWords = new Set(paperNorm.split(" ").filter((w) => w.length > 3));
+    const overlap = cardWords.filter((w) => paperWords.has(w)).length;
+    if (overlap >= 2) return 40 + overlap;
+    return 0;
+  };
+
+  const keyHintScore = (keyNorm, paperNorm) => {
+    if (!keyNorm || !paperNorm) return 0;
+    if (keyNorm.length >= 4 && paperNorm.includes(keyNorm)) return 100;
+    const keyLoose = keyNorm.replace(/\d/g, "");
+    if (keyLoose.length >= 3 && paperNorm.includes(keyLoose)) return 96;
+    return 0;
+  };
+
   const findPaperCitations = (card, papers) => {
     if (!papers?.length) return null;
     const key = card.getAttribute("data-scholar-title");
     const h3 = card.querySelector(".pub-body h3");
-    const cardNorm = normalizeTitle(key || (h3 ? h3.textContent : ""));
-    if (!cardNorm) return null;
+    const fullNorm = normalizeTitle(h3 ? h3.textContent : "");
+    const keyNorm = key ? normalizeTitle(key) : "";
+    if (!fullNorm && !keyNorm) return null;
 
     let best = null;
     let bestScore = 0;
@@ -112,27 +131,9 @@
       const paperNorm = normalizeTitle(paper.title);
       if (!paperNorm) continue;
 
-      let score = 0;
-      if (key) {
-        const keyNorm = normalizeTitle(key);
-        const keyLoose = keyNorm.replace(/\d/g, "");
-        if (
-          paperNorm.includes(keyNorm) ||
-          keyNorm.includes(paperNorm.slice(0, 12)) ||
-          (keyLoose.length >= 3 && paperNorm.includes(keyLoose))
-        ) {
-          score = 100;
-        }
-      }
-      if (score < 100 && (paperNorm.includes(cardNorm) || cardNorm.includes(paperNorm))) {
-        score = 80;
-      }
-      if (score < 80) {
-        const cardWords = cardNorm.split(" ").filter((w) => w.length > 3);
-        const paperWords = new Set(paperNorm.split(" ").filter((w) => w.length > 3));
-        const overlap = cardWords.filter((w) => paperWords.has(w)).length;
-        if (overlap >= 2) score = 40 + overlap;
-      }
+      let score = titleMatchScore(fullNorm, paperNorm);
+      if (keyNorm) score = Math.max(score, keyHintScore(keyNorm, paperNorm));
+
       if (score > bestScore) {
         bestScore = score;
         best = paper;
