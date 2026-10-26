@@ -72,10 +72,11 @@
   revealSelectors.forEach((sel) => {
     document.querySelectorAll(sel).forEach((el, i) => {
       el.classList.add("reveal");
-      if (
+      if (sel === ".news-list li") {
+        el.style.setProperty("--news-reveal-delay", `${Math.min(i, 5) * 0.08}s`);
+      } else if (
         sel === ".feature-tile" ||
         sel === ".pub-card" ||
-        sel === ".news-list li" ||
         sel === ".about-facts .fact"
       ) {
         el.classList.add(`reveal-delay-${(i % 4) + 1}`);
@@ -86,27 +87,62 @@
 
   if (reduceMotion) {
     revealEls.forEach((el) => el.classList.add("in-view"));
-    return;
+  } else {
+    /* ---- IntersectionObserver fade/scale reveals ---- */
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.1 }
+    );
+
+    revealEls.forEach((el) => io.observe(el));
+
+    window.setTimeout(() => {
+      revealEls.forEach((el) => el.classList.add("in-view"));
+    }, 2500);
   }
 
-  /* ---- IntersectionObserver fade/scale reveals ---- */
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          io.unobserve(entry.target);
+  /* ---- News timeline: highlight item nearest viewport center ---- */
+  const newsItems = document.querySelectorAll(".news-list li");
+  if (newsItems.length && !reduceMotion) {
+    const visibility = new Map();
+    const pickActiveNewsItem = () => {
+      let best = null;
+      let bestRatio = 0;
+      newsItems.forEach((li) => {
+        const ratio = visibility.get(li) || 0;
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          best = li;
         }
       });
-    },
-    { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.1 }
-  );
+      newsItems.forEach((li) => {
+        li.classList.toggle("is-timeline-active", li === best && bestRatio > 0.08);
+      });
+    };
 
-  revealEls.forEach((el) => io.observe(el));
+    const newsIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibility.set(entry.target, entry.intersectionRatio);
+        });
+        pickActiveNewsItem();
+      },
+      {
+        root: null,
+        rootMargin: "-32% 0px -32% 0px",
+        threshold: [0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      }
+    );
 
-  window.setTimeout(() => {
-    revealEls.forEach((el) => el.classList.add("in-view"));
-  }, 2500);
+    newsItems.forEach((li) => newsIo.observe(li));
+  }
 
   /* ---- Parallax on hero portrait (rAF) ---- */
   const portrait = document.querySelector(".hero-portrait");
@@ -138,7 +174,7 @@
     }
   };
 
-  if (portrait && hero) {
+  if (portrait && hero && !reduceMotion) {
     window.addEventListener("scroll", onScrollParallax, { passive: true });
     updateParallax();
   }
