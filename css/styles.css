@@ -8,6 +8,8 @@
   --bg: #ffffff;
   --bg-alt: #f5f5f7;
   --bg-media: #ebebed;
+  /* Paper teaser wells stay white in all themes (transparent PNGs) */
+  --bg-pub-media: #ffffff;
   --bg-nav: rgba(251, 251, 253, 0.72);
   --bg-nav-menu: rgba(251, 251, 253, 0.96);
   --surface: #ffffff;
@@ -785,7 +787,7 @@ em {
 }
 
 .pub-media {
-  background: var(--bg-media);
+  background: var(--bg-pub-media);
   /* Paper teasers keep natural aspect — never crop or squash */
   display: grid;
   place-items: start center;
@@ -794,6 +796,10 @@ em {
   padding: 8px 10px;
   min-height: 0;
   border-right: 1px solid var(--border-soft);
+}
+
+[data-theme="dark"] .pub-media {
+  background: #fff;
 }
 
 .pub-media img {
