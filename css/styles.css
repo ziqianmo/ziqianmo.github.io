@@ -34,6 +34,7 @@
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   /* Modest global type step-up (v3.2) */
   --fs-base: 18px;
+  --fs-lg: 23px;
   --fs-sm: 15px;
   --fs-xs: 13px;
   --fs-2xs: 12px;
@@ -325,29 +326,23 @@ em {
 
 .hero-scholar {
   display: block;
-  margin-top: 18px;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-sm);
+  margin: 24px 0 6px;
+  padding: 2px 0 0;
+  max-width: 26rem;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out),
-    transform 0.35s var(--ease-apple);
+  transition: opacity 0.35s var(--ease-out);
 }
 
-.hero-scholar:hover {
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+.hero-scholar:hover .scholar-stat-v {
+  color: var(--blue);
 }
 
-.hero-scholar-row {
+.hero-scholar-metrics {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
 }
 
 .hero-scholar-stats {
@@ -355,56 +350,71 @@ em {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 10px;
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-scholar-stats li {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 4.5rem;
-  padding: 6px 12px;
-  border-radius: 980px;
-  background: #fff;
-  border: 1px solid var(--border-soft);
+  align-items: flex-start;
+  gap: 5px;
+  flex: 1;
+  min-width: 3.75rem;
+  padding: 0 14px;
+  border-right: 1px solid var(--border-soft);
+}
+
+.hero-scholar-stats li:first-child {
+  padding-left: 0;
+}
+
+.hero-scholar-stats li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.scholar-stat-v {
+  font-size: clamp(22px, 2.4vw, var(--fs-lg));
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  transition: color 0.35s var(--ease-out);
 }
 
 .scholar-stat-k {
   font-size: var(--fs-micro);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-tertiary);
 }
 
-.scholar-stat-v {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-}
-
 .hero-scholar-spark {
-  flex: 0 0 80px;
-  width: 80px;
-  height: 28px;
-  color: var(--blue);
-  opacity: 0.55;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 36px;
+  color: rgba(0, 113, 227, 0.42);
+  overflow: visible;
 }
 
-.hero-scholar-spark polyline {
+.hero-scholar-spark-fill {
+  fill: currentColor;
+  opacity: 0.35;
+}
+
+.hero-scholar-spark-line {
   fill: none;
-  stroke: currentColor;
-  stroke-width: 1.75;
+  stroke: rgba(0, 113, 227, 0.72);
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .hero-scholar-note {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   font-size: var(--fs-micro);
   color: var(--text-tertiary);
   letter-spacing: -0.01em;
@@ -788,15 +798,22 @@ em {
 }
 
 .pub-cited {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2px;
+  padding: 3px 9px;
+  border-radius: 980px;
+  background: rgba(0, 113, 227, 0.09);
   font-size: var(--fs-micro);
-  font-weight: 500;
-  color: var(--text-tertiary);
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+  white-space: nowrap;
 }
 
 .pub-cited strong {
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-weight: 700;
+  color: var(--blue);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1199,13 +1216,30 @@ em {
     justify-content: center;
   }
 
-  .hero-scholar-row {
+  .hero-scholar {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  .hero-scholar-metrics {
     flex-direction: column;
     align-items: center;
+    gap: 14px;
   }
 
   .hero-scholar-stats {
+    width: 100%;
+    max-width: 22rem;
     justify-content: center;
+  }
+
+  .hero-scholar-stats li {
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .hero-scholar-stats li:first-child {
+    padding-left: 12px;
   }
 
   .hero-cta {
