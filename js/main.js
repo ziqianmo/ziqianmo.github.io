@@ -269,11 +269,10 @@
       el.classList.add("reveal");
       if (sel === ".news-list li") {
         el.style.setProperty("--news-reveal-delay", `${Math.min(i, 5) * 0.08}s`);
-      } else if (
-        sel === ".feature-tile" ||
-        sel === ".pub-card" ||
-        sel === ".about-facts .fact"
-      ) {
+      } else if (sel === ".feature-tile") {
+        el.classList.add(`reveal-delay-${(i % 4) + 1}`);
+        el.style.setProperty("--feature-num-delay", `${0.1 + (i % 3) * 0.09}s`);
+      } else if (sel === ".pub-card" || sel === ".about-facts .fact") {
         el.classList.add(`reveal-delay-${(i % 4) + 1}`);
       }
       revealEls.push(el);
@@ -337,6 +336,68 @@
     );
 
     newsItems.forEach((li) => newsIo.observe(li));
+  }
+
+  /* ---- Nav: highlight section in view ---- */
+  const navSectionIds = [
+    "about",
+    "research",
+    "news",
+    "publications",
+    "honors",
+    "education",
+    "contact",
+  ];
+  const navSections = navSectionIds
+    .map((id) => document.getElementById(id))
+    .filter((el) => el);
+  const navAnchors = menu
+    ? [...menu.querySelectorAll('a[href^="#"]')].filter((a) => {
+        const id = (a.getAttribute("href") || "").slice(1);
+        return id && id !== "top" && navSectionIds.includes(id);
+      })
+    : [];
+
+  if (navSections.length && navAnchors.length) {
+    const sectionVisibility = new Map();
+    const setActiveSection = (sectionId) => {
+      navAnchors.forEach((a) => {
+        const id = (a.getAttribute("href") || "").slice(1);
+        const active = Boolean(sectionId && id === sectionId);
+        a.classList.toggle("is-active", active);
+        if (active) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      });
+    };
+
+    const pickActiveSection = () => {
+      let best = null;
+      let bestRatio = 0;
+      navSections.forEach((section) => {
+        const ratio = sectionVisibility.get(section) || 0;
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          best = section;
+        }
+      });
+      setActiveSection(bestRatio > 0.06 && best ? best.id : null);
+    };
+
+    const sectionIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          sectionVisibility.set(entry.target, entry.intersectionRatio);
+        });
+        pickActiveSection();
+      },
+      {
+        root: null,
+        rootMargin: "-22% 0px -52% 0px",
+        threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      }
+    );
+
+    navSections.forEach((section) => sectionIo.observe(section));
   }
 
   /* ---- Parallax on hero portrait (rAF) ---- */
