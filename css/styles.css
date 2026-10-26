@@ -60,6 +60,10 @@
   --timeline-dot-active: var(--blue);
   --timeline-active-glow: rgba(0, 113, 227, 0.35);
   --timeline-year-active: var(--text);
+  --pub-venue-bg: rgba(0, 113, 227, 0.11);
+  --pub-venue-border: rgba(0, 113, 227, 0.28);
+  --pub-venue-fg: #004d99;
+  --pub-venue-year: var(--blue);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -95,6 +99,10 @@
   --tag-oral-fg: #ff9f0a;
   --tag-win-bg: rgba(48, 209, 88, 0.16);
   --tag-win-fg: #30d158;
+  --pub-venue-bg: rgba(10, 132, 255, 0.2);
+  --pub-venue-border: rgba(10, 132, 255, 0.38);
+  --pub-venue-fg: #7ec8ff;
+  --pub-venue-year: #2997ff;
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.55);
@@ -958,28 +966,65 @@ em {
 }
 
 .pub-venue {
-  margin: 0 0 6px;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--text);
+  margin: 0 0 10px;
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
 
+.pub-venue-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 5px 12px 5px 13px;
+  border-radius: 980px;
+  background: var(--pub-venue-bg);
+  border: 1px solid var(--pub-venue-border);
+  color: var(--pub-venue-fg);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.pub-venue-dot {
+  margin: 0 0.35em;
+  opacity: 0.5;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.pub-venue-year {
+  color: var(--pub-venue-year);
+  letter-spacing: 0.04em;
+}
+
 .badge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 5px 10px;
   border-radius: 980px;
   background: rgba(0, 113, 227, 0.1);
   color: var(--blue);
   font-size: var(--fs-micro);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  line-height: 1.25;
+  border: 1px solid transparent;
+}
+
+.badge-oral {
+  background: var(--tag-oral-bg);
+  color: var(--tag-oral-fg);
+  border-color: rgba(191, 64, 0, 0.22);
+}
+
+[data-theme="dark"] .badge-oral {
+  border-color: rgba(255, 159, 10, 0.28);
 }
 
 .pub-body h3 {
