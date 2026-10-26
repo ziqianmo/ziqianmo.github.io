@@ -23,10 +23,9 @@
     if (themeToggle) {
       const isDark = theme === "dark";
       themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-      themeToggle.setAttribute(
-        "aria-label",
-        isDark ? "Switch to light mode" : "Switch to dark mode"
-      );
+      const labelKey = isDark ? "aria.theme.light" : "aria.theme.dark";
+      const label = window.siteI18n ? window.siteI18n.t(labelKey) : isDark ? "Switch to light mode" : "Switch to dark mode";
+      themeToggle.setAttribute("aria-label", label);
     }
   };
 
@@ -55,14 +54,21 @@
     toggle.addEventListener("click", () => {
       const open = nav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      const key = open ? "aria.nav.close" : "aria.nav.open";
+      toggle.setAttribute(
+        "aria-label",
+        window.siteI18n ? window.siteI18n.t(key) : open ? "Close menu" : "Open menu"
+      );
     });
 
     menu.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
+        toggle.setAttribute(
+          "aria-label",
+          window.siteI18n ? window.siteI18n.t("aria.nav.open") : "Open menu"
+        );
       });
     });
   }
@@ -94,6 +100,7 @@
       .toLowerCase();
 
   const formatUpdated = (iso) => {
+    if (window.siteI18n) return window.siteI18n.formatUpdated(iso);
     if (!iso) return "Updated recently";
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return "Updated recently";
@@ -103,6 +110,8 @@
       day: "numeric",
     })}`;
   };
+
+  let lastScholarData = null;
 
   const animateCount = (el, target) => {
     if (!el || typeof target !== "number") return;
@@ -191,6 +200,7 @@
   };
 
   const applyScholarData = (data) => {
+    lastScholarData = data;
     document.querySelectorAll("[data-scholar-metric]").forEach((el) => {
       const key = el.getAttribute("data-scholar-metric");
       const val = data[key];
@@ -219,10 +229,42 @@
       if (!links || card.querySelector(".pub-cited")) return;
       const span = document.createElement("span");
       span.className = "pub-cited";
-      span.innerHTML = `Cited by&nbsp;<strong>${cites}</strong>`;
+      const citedLabel = window.siteI18n ? window.siteI18n.t("publications.citedBy") : "Cited by";
+      span.innerHTML = `${citedLabel}&nbsp;<strong>${cites}</strong>`;
       links.appendChild(span);
     });
   };
+
+  const refreshScholarLocalized = () => {
+    document.querySelectorAll(".pub-cited").forEach((el) => {
+      const strong = el.querySelector("strong");
+      if (!strong) return;
+      const citedLabel = window.siteI18n ? window.siteI18n.t("publications.citedBy") : "Cited by";
+      el.innerHTML = `${citedLabel}&nbsp;<strong>${strong.textContent}</strong>`;
+    });
+    if (lastScholarData) {
+      const updatedText = formatUpdated(lastScholarData.updated);
+      const updatedEl = document.getElementById("scholar-updated");
+      if (updatedEl) updatedEl.textContent = updatedText;
+      const footerMeta = document.getElementById("scholar-footer-meta");
+      if (footerMeta && !footerMeta.hidden) {
+        footerMeta.innerHTML = `${updatedText} · <a href="https://scholar.google.com/citations?user=${encodeURIComponent(
+          lastScholarData.scholar_id || "cuiFGOAAAAAJ"
+        )}" target="_blank" rel="noopener">Google Scholar</a>`;
+      }
+    }
+  };
+
+  document.addEventListener("langchange", () => {
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    applyTheme(getTheme());
+    refreshScholarLocalized();
+    if (toggle && nav) {
+      const open = nav.classList.contains("is-open");
+      const key = open ? "aria.nav.close" : "aria.nav.open";
+      toggle.setAttribute("aria-label", window.siteI18n ? window.siteI18n.t(key) : open ? "Close menu" : "Open menu");
+    }
+  });
 
   const loadScholarMetrics = async () => {
     try {
