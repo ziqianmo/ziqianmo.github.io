@@ -1,0 +1,70 @@
+{
+  "updated": "2026-10-26T15:31:04Z",
+  "scholar_id": "cuiFGOAAAAAJ",
+  "citations": 41,
+  "citations_since_2021": 41,
+  "h_index": 4,
+  "i10_index": 1,
+  "year_graph": [
+    { "year": 2024, "citations": 1 },
+    { "year": 2025, "citations": 6 },
+    { "year": 2026, "citations": 34 }
+  ],
+  "papers": [
+    {
+      "title": "Enhanced spatial-frequency synergistic network for multispectral and hyperspectral image fusion",
+      "citations": 16,
+      "year": 2025
+    },
+    {
+      "title": "DeSAM2: Detection-Driven SAM2 for Hyperspectral Object Tracking",
+      "citations": 6,
+      "year": 2024
+    },
+    {
+      "title": "Spectral modality-aware interactive fusion network for hsi super-resolution",
+      "citations": 5,
+      "year": 2024
+    },
+    {
+      "title": "CAMEO: A Conditional and Quality-Aware Multi-Agent Image Editing Orchestrator",
+      "citations": 4,
+      "year": 2026
+    },
+    {
+      "title": "SIGN: Saliency-Aware Integrated Global-Local Network for Cross-View Geo-Localization",
+      "citations": 3,
+      "year": 2025
+    },
+    {
+      "title": "Spectral reconstruction via dual cross-scanning and cross-attention mechanisms",
+      "citations": 3,
+      "year": 2024
+    },
+    {
+      "title": "A multi-dimensional context-aware healthcare service recommendation method",
+      "citations": 3,
+      "year": 2022
+    },
+    {
+      "title": "STAR: Spatio-Temporal Alignment and Refinement for Cross-View Geo-Localization",
+      "citations": 1,
+      "year": 2026
+    },
+    {
+      "title": "SGeo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization",
+      "citations": 0,
+      "year": 2026
+    },
+    {
+      "title": "A Survey on Visual Geolocalization: Taxonomy, Progress, and Prospects",
+      "citations": 0,
+      "year": 2026
+    },
+    {
+      "title": "ASTMNET: Adaptive Spectral Token Mixer with Selective Feature Enhancement for Pansharpening",
+      "citations": 0,
+      "year": 2026
+    }
+  ]
+}
