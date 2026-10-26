@@ -9,6 +9,8 @@
   const menu = document.getElementById("site-menu");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const SCHOLAR_JSON_URL = "data/scholar.json";
+
   /* ---- Mobile nav ---- */
   if (toggle && nav && menu) {
     toggle.addEventListener("click", () => {
@@ -41,6 +43,152 @@
       hero.classList.add("is-ready");
     });
   }
+
+  /* ---- Google Scholar metrics ---- */
+  const normalizeTitle = (raw) =>
+    String(raw || "")
+      .replace(/<[^>]+>/g, "")
+      .replace(/\u00b3/g, "3")
+      .replace(/[^a-zA-Z0-9\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+
+  const formatUpdated = (iso) => {
+    if (!iso) return "Updated recently";
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "Updated recently";
+    return `Updated ${d.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}`;
+  };
+
+  const animateCount = (el, target) => {
+    if (!el || typeof target !== "number") return;
+    if (reduceMotion) {
+      el.textContent = String(target);
+      return;
+    }
+    const start = performance.now();
+    const duration = 900;
+    const from = 0;
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = String(Math.round(from + (target - from) * eased));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const renderSparkline = (svg, yearGraph) => {
+    if (!svg || !Array.isArray(yearGraph) || yearGraph.length < 2) return;
+    const w = 80;
+    const h = 24;
+    const pad = 2;
+    const values = yearGraph.map((p) => p.citations);
+    const max = Math.max(...values, 1);
+    const pts = yearGraph.map((p, i) => {
+      const x = pad + (i / (yearGraph.length - 1)) * (w - pad * 2);
+      const y = h - pad - (p.citations / max) * (h - pad * 2);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    });
+    svg.innerHTML = `<polyline points="${pts.join(" ")}" />`;
+  };
+
+  const findPaperCitations = (card, papers) => {
+    if (!papers?.length) return null;
+    const key = card.getAttribute("data-scholar-title");
+    const h3 = card.querySelector(".pub-body h3");
+    const cardNorm = normalizeTitle(key || (h3 ? h3.textContent : ""));
+    if (!cardNorm) return null;
+
+    let best = null;
+    let bestScore = 0;
+
+    for (const paper of papers) {
+      const paperNorm = normalizeTitle(paper.title);
+      if (!paperNorm) continue;
+
+      let score = 0;
+      if (key) {
+        const keyNorm = normalizeTitle(key);
+        const keyLoose = keyNorm.replace(/\d/g, "");
+        if (
+          paperNorm.includes(keyNorm) ||
+          keyNorm.includes(paperNorm.slice(0, 12)) ||
+          (keyLoose.length >= 3 && paperNorm.includes(keyLoose))
+        ) {
+          score = 100;
+        }
+      }
+      if (score < 100 && (paperNorm.includes(cardNorm) || cardNorm.includes(paperNorm))) {
+        score = 80;
+      }
+      if (score < 80) {
+        const cardWords = cardNorm.split(" ").filter((w) => w.length > 3);
+        const paperWords = new Set(paperNorm.split(" ").filter((w) => w.length > 3));
+        const overlap = cardWords.filter((w) => paperWords.has(w)).length;
+        if (overlap >= 2) score = 40 + overlap;
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        best = paper;
+      }
+    }
+
+    if (!best || bestScore < 40) return null;
+    return typeof best.citations === "number" ? best.citations : null;
+  };
+
+  const applyScholarData = (data) => {
+    document.querySelectorAll("[data-scholar-metric]").forEach((el) => {
+      const key = el.getAttribute("data-scholar-metric");
+      const val = data[key];
+      if (typeof val === "number") animateCount(el, val);
+    });
+
+    const updatedText = formatUpdated(data.updated);
+    const updatedEl = document.getElementById("scholar-updated");
+    if (updatedEl) updatedEl.textContent = updatedText;
+
+    const footerMeta = document.getElementById("scholar-footer-meta");
+    if (footerMeta) {
+      footerMeta.hidden = false;
+      footerMeta.innerHTML = `${updatedText} · <a href="https://scholar.google.com/citations?user=${encodeURIComponent(
+        data.scholar_id || "cuiFGOAAAAAJ"
+      )}" target="_blank" rel="noopener">Google Scholar</a>`;
+    }
+
+    const spark = document.querySelector(".hero-scholar-spark");
+    renderSparkline(spark, data.year_graph);
+
+    document.querySelectorAll(".pub-card").forEach((card) => {
+      const cites = findPaperCitations(card, data.papers);
+      if (cites === null || cites <= 0) return;
+      const links = card.querySelector(".pub-links");
+      if (!links || card.querySelector(".pub-cited")) return;
+      const span = document.createElement("span");
+      span.className = "pub-cited";
+      span.innerHTML = `Cited by <strong>${cites}</strong>`;
+      links.appendChild(span);
+    });
+  };
+
+  const loadScholarMetrics = async () => {
+    try {
+      const res = await fetch(SCHOLAR_JSON_URL, { cache: "default" });
+      if (!res.ok) return;
+      const data = await res.json();
+      applyScholarData(data);
+    } catch {
+      /* keep placeholders */
+    }
+  };
+
+  loadScholarMetrics();
 
   /* ---- Mark reveal targets ---- */
   const revealSelectors = [
