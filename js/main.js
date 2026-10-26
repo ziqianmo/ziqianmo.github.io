@@ -4,6 +4,45 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  const THEME_KEY = "theme";
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+  const getTheme = () => (root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  const applyTheme = (theme) => {
+    if (theme === "dark") {
+      root.setAttribute("data-theme", "dark");
+    } else {
+      root.removeAttribute("data-theme");
+    }
+    if (themeMeta) {
+      themeMeta.setAttribute("content", theme === "dark" ? "#000000" : "#f5f5f7");
+    }
+    if (themeToggle) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
+  };
+
+  if (themeToggle) {
+    applyTheme(getTheme());
+    themeToggle.addEventListener("click", () => {
+      const next = getTheme() === "dark" ? "light" : "dark";
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch {
+        /* private mode */
+      }
+      applyTheme(next);
+    });
+  }
+
   const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.getElementById("site-menu");
