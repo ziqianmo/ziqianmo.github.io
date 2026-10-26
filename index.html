@@ -29,6 +29,13 @@
       if (dark) root.setAttribute("data-theme", "dark");
       var meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute("content", dark ? "#000000" : "#f5f5f7");
+      var LANG_KEY = "lang";
+      try {
+        if (localStorage.getItem(LANG_KEY) === "zh") {
+          root.lang = "zh-CN";
+          root.dataset.lang = "zh";
+        }
+      } catch (e) {}
     })();
   </script>
   <link rel="stylesheet" href="css/styles.css" />
@@ -37,16 +44,27 @@
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a class="nav-brand" href="#top">Ziqian Mo</a>
-      <nav class="nav-links" id="site-menu" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#honors">Honors</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav-links" id="site-menu" data-i18n-aria="aria.nav" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#research" data-i18n="nav.research">Research</a>
+        <a href="#news" data-i18n="nav.news">News</a>
+        <a href="#publications" data-i18n="nav.publications">Publications</a>
+        <a href="#honors" data-i18n="nav.honors">Honors</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="nav-controls">
+        <button
+          type="button"
+          class="lang-toggle"
+          id="lang-toggle"
+          aria-label="Switch to Chinese"
+          aria-pressed="false"
+        >
+          <span class="lang-opt lang-opt-zh" aria-hidden="true">中</span>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <span class="lang-opt lang-opt-en" aria-hidden="true">EN</span>
+        </button>
         <button
           type="button"
           class="theme-toggle"
@@ -62,7 +80,7 @@
             <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 1 0 11.5 11.5z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" />
           </svg>
         </button>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+        <button class="nav-toggle" type="button" id="nav-toggle" data-i18n-aria="aria.nav.open" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
           <span></span><span></span>
         </button>
       </div>
@@ -71,20 +89,20 @@
 
   <main id="top">
     <!-- Hero — denser Apple split layout -->
-    <section class="hero" aria-label="Introduction">
+    <section class="hero" data-i18n-aria="aria.hero" aria-label="Introduction">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="hero-eyebrow">HKUST-GZ · DSA Thrust</p>
+          <p class="hero-eyebrow" data-i18n="hero.eyebrow">HKUST-GZ · DSA Thrust</p>
           <h1 class="hero-name">Ziqian Mo</h1>
           <p class="hero-cn">莫子谦</p>
-          <p class="hero-tagline">
+          <p class="hero-tagline" data-i18n-html="hero.tagline">
             Exploring <em>Embodied AI</em> and <em>Spatial Intelligence</em>
           </p>
-          <ul class="hero-chips" aria-label="Focus areas">
-            <li>Computer Vision</li>
-            <li>Embodied AI</li>
-            <li>Cross-View Geo-localization</li>
-            <li>Vision-Language Models</li>
+          <ul class="hero-chips" data-i18n-aria="aria.hero.focus" aria-label="Focus areas">
+            <li data-i18n="hero.chip.cv">Computer Vision</li>
+            <li data-i18n="hero.chip.embodied">Embodied AI</li>
+            <li data-i18n="hero.chip.geo">Cross-View Geo-localization</li>
+            <li data-i18n="hero.chip.vlm">Vision-Language Models</li>
           </ul>
           <a
             class="hero-scholar"
@@ -92,29 +110,30 @@
             href="https://scholar.google.com/citations?user=cuiFGOAAAAAJ&amp;hl=en"
             target="_blank"
             rel="noopener"
+            data-i18n-aria="aria.hero.scholar"
             aria-label="Google Scholar profile and citation metrics"
           >
             <div class="hero-scholar-metrics">
               <ul class="hero-scholar-stats">
                 <li>
                   <span class="scholar-stat-v" data-scholar-metric="citations">—</span>
-                  <span class="scholar-stat-k">Citations</span>
+                  <span class="scholar-stat-k" data-i18n="hero.scholar.citations">Citations</span>
                 </li>
                 <li>
                   <span class="scholar-stat-v" data-scholar-metric="h_index">—</span>
-                  <span class="scholar-stat-k">h-index</span>
+                  <span class="scholar-stat-k" data-i18n="hero.scholar.hindex">h-index</span>
                 </li>
                 <li>
                   <span class="scholar-stat-v" data-scholar-metric="i10_index">—</span>
-                  <span class="scholar-stat-k">i10-index</span>
+                  <span class="scholar-stat-k" data-i18n="hero.scholar.i10">i10-index</span>
                 </li>
               </ul>
               <svg class="hero-scholar-spark" viewBox="0 0 96 32" preserveAspectRatio="none" aria-hidden="true" focusable="false"></svg>
             </div>
-            <p class="hero-scholar-note"><span id="scholar-updated">Updated …</span> · Google Scholar</p>
+            <p class="hero-scholar-note"><span id="scholar-updated" data-i18n="hero.scholar.updating">Updated …</span> · Google Scholar</p>
           </a>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="mailto:zmo898@connect.hkust-gz.edu.cn">Email</a>
+            <a class="btn btn-primary" href="mailto:zmo898@connect.hkust-gz.edu.cn" data-i18n="hero.cta.email">Email</a>
             <a class="btn btn-quiet" href="https://scholar.google.com/citations?user=cuiFGOAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
             <a class="btn btn-quiet" href="https://github.com/ziqianmo" target="_blank" rel="noopener">GitHub</a>
           </div>
@@ -130,8 +149,8 @@
       <div class="wrap">
         <div class="about-grid">
           <div class="about-main">
-            <h2 class="section-label">About</h2>
-            <p class="lead">
+            <h2 class="section-label" data-i18n="about.title">About</h2>
+            <p class="lead" data-i18n-html="about.lead">
               Greetings! I’m currently a PhD student in the Data Science and Analytics (DSA) Thrust at the
               Hong Kong University of Science and Technology (Guangzhou) (HKUST-GZ), supervised by Asst. Prof.
               <a href="https://sites.google.com/ucsc.edu/jiahengwei" target="_blank" rel="noopener">Jiaheng Wei (魏嘉珩)</a>.
@@ -142,22 +161,22 @@
               My research interests include computer vision, embodied AI, vision-language models, and spatial intelligence.
             </p>
           </div>
-          <aside class="about-facts" aria-label="Quick facts">
+          <aside class="about-facts" data-i18n-aria="aria.about.facts" aria-label="Quick facts">
             <div class="fact">
-              <span class="fact-k">Role</span>
-              <span class="fact-v">PhD Student</span>
+              <span class="fact-k" data-i18n="about.fact.role.k">Role</span>
+              <span class="fact-v" data-i18n="about.fact.role.v">PhD Student</span>
             </div>
             <div class="fact">
-              <span class="fact-k">Affiliation</span>
+              <span class="fact-k" data-i18n="about.fact.affiliation.k">Affiliation</span>
               <span class="fact-v">HKUST-GZ · DSA</span>
             </div>
             <div class="fact">
-              <span class="fact-k">Advisor</span>
+              <span class="fact-k" data-i18n="about.fact.advisor.k">Advisor</span>
               <span class="fact-v">Jiaheng Wei</span>
             </div>
             <div class="fact">
-              <span class="fact-k">Focus</span>
-              <span class="fact-v">Embodied AI · Spatial Intelligence</span>
+              <span class="fact-k" data-i18n="about.fact.focus.k">Focus</span>
+              <span class="fact-v" data-i18n="about.fact.focus.v">Embodied AI · Spatial Intelligence</span>
             </div>
           </aside>
         </div>
@@ -167,23 +186,23 @@
     <!-- Research — Apple feature modules -->
     <section class="band band-gray" id="research">
       <div class="wrap">
-        <h2 class="section-label">Research Interests</h2>
-        <p class="section-kicker">Three directions that shape how agents see and locate themselves in the world.</p>
+        <h2 class="section-label" data-i18n="research.title">Research Interests</h2>
+        <p class="section-kicker" data-i18n="research.kicker">Three directions that shape how agents see and locate themselves in the world.</p>
         <div class="feature-grid">
           <article class="feature-tile">
             <span class="feature-num">01</span>
-            <h3>Embodied AI &amp; Egocentric Vision</h3>
-            <p>Perception and reasoning for agents that see and act in the physical world from a first-person view.</p>
+            <h3 data-i18n="research.t1.title">Embodied AI &amp; Egocentric Vision</h3>
+            <p data-i18n="research.t1.body">Perception and reasoning for agents that see and act in the physical world from a first-person view.</p>
           </article>
           <article class="feature-tile">
             <span class="feature-num">02</span>
-            <h3>Spatial Intelligence &amp; Multimodal Learning</h3>
-            <p>Vision-language models and multimodal systems that understand space, geometry, and scene structure.</p>
+            <h3 data-i18n="research.t2.title">Spatial Intelligence &amp; Multimodal Learning</h3>
+            <p data-i18n="research.t2.body">Vision-language models and multimodal systems that understand space, geometry, and scene structure.</p>
           </article>
           <article class="feature-tile">
             <span class="feature-num">03</span>
-            <h3>Cross-View Geo-localization</h3>
-            <p>Matching and aligning imagery across viewpoints — ground, aerial, and satellite — for robust localization.</p>
+            <h3 data-i18n="research.t3.title">Cross-View Geo-localization</h3>
+            <p data-i18n="research.t3.body">Matching and aligning imagery across viewpoints — ground, aerial, and satellite — for robust localization.</p>
           </article>
         </div>
       </div>
@@ -193,8 +212,8 @@
     <section class="band band-white" id="news">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="section-label">News</h2>
-          <p class="section-kicker tight">Recent acceptances, talks, and competition results.</p>
+          <h2 class="section-label" data-i18n="news.title">News</h2>
+          <p class="section-kicker tight" data-i18n="news.kicker">Recent acceptances, talks, and competition results.</p>
         </div>
         <div class="news-timeline">
         <ul class="news-list">
@@ -202,42 +221,42 @@
             <time datetime="2026-08">2026.08</time>
             <div class="news-body">
               <span class="news-tag">IEEE TGRS</span>
-              <p><strong>STAR</strong>, our work on spatio-temporal alignment and refinement for cross-view geo-localization, was accepted by <strong>IEEE TGRS</strong>.</p>
+              <p data-i18n-html="news.n1"><strong>STAR</strong>, our work on spatio-temporal alignment and refinement for cross-view geo-localization, was accepted by <strong>IEEE TGRS</strong>.</p>
             </div>
           </li>
           <li>
             <time datetime="2026-07">2026.07</time>
             <div class="news-body">
               <span class="news-tag">ACM MM</span>
-              <p><strong>S<sup>3</sup>Geo</strong> was accepted by <strong>ACM MM 2026</strong>. It explores structure-semantic synergy for cross-view geo-localization.</p>
+              <p data-i18n-html="news.n2"><strong>S<sup>3</sup>Geo</strong> was accepted by <strong>ACM MM 2026</strong>. It explores structure-semantic synergy for cross-view geo-localization.</p>
             </div>
           </li>
           <li>
             <time datetime="2026-01">2026.01</time>
             <div class="news-body">
               <span class="news-tag">ICASSP</span>
-              <p><strong>ASTMNet</strong>, our work on adaptive spectral token mixing for pansharpening, was accepted by <strong>ICASSP 2026</strong>.</p>
+              <p data-i18n-html="news.n3"><strong>ASTMNet</strong>, our work on adaptive spectral token mixing for pansharpening, was accepted by <strong>ICASSP 2026</strong>.</p>
             </div>
           </li>
           <li>
             <time datetime="2025-07">2025.07</time>
             <div class="news-body">
               <span class="news-tag">IEEE TGRS</span>
-              <p><strong>ESFS</strong>, our work on spatial-frequency synergy for multispectral and hyperspectral image fusion, was accepted by <strong>IEEE TGRS</strong>.</p>
+              <p data-i18n-html="news.n4"><strong>ESFS</strong>, our work on spatial-frequency synergy for multispectral and hyperspectral image fusion, was accepted by <strong>IEEE TGRS</strong>.</p>
             </div>
           </li>
           <li>
             <time datetime="2025-04">2025.04</time>
             <div class="news-body">
-              <span class="news-tag oral">IGARSS Oral</span>
-              <p><strong>SIGN</strong> was accepted for an <strong>oral presentation at IGARSS 2025</strong>, featuring saliency-aware global-local learning for cross-view geo-localization.</p>
+              <span class="news-tag oral" data-i18n="news.tag.igarssOral">IGARSS Oral</span>
+              <p data-i18n-html="news.n5"><strong>SIGN</strong> was accepted for an <strong>oral presentation at IGARSS 2025</strong>, featuring saliency-aware global-local learning for cross-view geo-localization.</p>
             </div>
           </li>
           <li>
             <time datetime="2024-12">2024.12</time>
             <div class="news-body">
-              <span class="news-tag win">1st Place</span>
-              <p>Our team won <strong>1st place</strong> in the <strong>Hyperspectral Object Tracking Challenge</strong> at the <strong>IEEE GRSS WHISPERS 2024 Competition</strong>.</p>
+              <span class="news-tag win" data-i18n="news.tag.firstPlace">1st Place</span>
+              <p data-i18n-html="news.n6">Our team won <strong>1st place</strong> in the <strong>Hyperspectral Object Tracking Challenge</strong> at the <strong>IEEE GRSS WHISPERS 2024 Competition</strong>.</p>
             </div>
           </li>
         </ul>
@@ -248,7 +267,7 @@
     <!-- Publications — product cards -->
     <section class="band band-gray" id="publications">
       <div class="wrap">
-        <div class="section-head"><h2 class="section-label">Publications</h2><p class="section-kicker tight">Selected papers across geo-localization, spectral imaging, and multimodal vision.</p></div>
+        <div class="section-head"><h2 class="section-label" data-i18n="publications.title">Publications</h2><p class="section-kicker tight" data-i18n="publications.kicker">Selected papers across geo-localization, spectral imaging, and multimodal vision.</p></div>
         <div class="pub-grid">
 
           <article class="pub-card" data-scholar-title="STAR">
@@ -336,7 +355,7 @@
               </h3>
               <p class="pub-authors"><span class="me">Ziqian Mo</span>, Yuxi Sun, Meng Xu, Sen Jia*</p>
               <div class="pub-links">
-                <a href="https://ziqianmo.github.io/sign.github.io/" target="_blank" rel="noopener">Project</a>
+                <a href="https://ziqianmo.github.io/sign.github.io/" target="_blank" rel="noopener" data-i18n="publications.project">Project</a>
               </div>
             </div>
           </article>
@@ -404,39 +423,39 @@
       <div class="wrap">
         <div class="split-2">
           <div>
-            <h2 class="section-label">Honors &amp; Awards</h2>
+            <h2 class="section-label" data-i18n="honors.title">Honors &amp; Awards</h2>
             <ul class="honor-list">
               <li class="featured">
                 <span class="year">2025</span>
-                <p><strong>National Scholarship for Graduate Students</strong> <span class="note">Top 2%</span></p>
+                <p data-i18n-html="honors.h1"><strong>National Scholarship for Graduate Students</strong> <span class="note">Top 2%</span></p>
               </li>
               <li>
                 <span class="year">2025</span>
-                <p>First Prize in the Scholarship of Shenzhen University <span class="note">Top 20%</span></p>
+                <p data-i18n-html="honors.h2">First Prize in the Scholarship of Shenzhen University <span class="note">Top 20%</span></p>
               </li>
               <li>
                 <span class="year">2024</span>
-                <p>First Prize in the Scholarship of Shenzhen University <span class="note">Top 20%</span></p>
+                <p data-i18n-html="honors.h3">First Prize in the Scholarship of Shenzhen University <span class="note">Top 20%</span></p>
               </li>
               <li>
                 <span class="year">2022</span>
-                <p>Second Prize in the Scholarship of Hubei University of Technology <span class="note">Top 6%</span></p>
+                <p data-i18n-html="honors.h4">Second Prize in the Scholarship of Hubei University of Technology <span class="note">Top 6%</span></p>
               </li>
               <li>
                 <span class="year">2021</span>
-                <p>Third Prize in the Scholarship of Hubei University of Technology <span class="note">Top 30%</span></p>
+                <p data-i18n-html="honors.h5">Third Prize in the Scholarship of Hubei University of Technology <span class="note">Top 30%</span></p>
               </li>
               <li>
                 <span class="year">2020</span>
-                <p>Second Prize in the Scholarship of Hubei University of Technology <span class="note">Top 6%</span></p>
+                <p data-i18n-html="honors.h6">Second Prize in the Scholarship of Hubei University of Technology <span class="note">Top 6%</span></p>
               </li>
             </ul>
           </div>
           <div id="service">
-            <h2 class="section-label">Professional Service</h2>
+            <h2 class="section-label" data-i18n="service.title">Professional Service</h2>
             <div class="service-card">
               <span class="year">2025–2027</span>
-              <p>
+              <p data-i18n-html="service.body">
                 <strong>Director</strong>, Power Low-Altitude Ecosystem Subcommittee,
                 IEEE PES China Satellite Technical Committee on Power System Communications and Cybersecurity.
               </p>
@@ -449,30 +468,30 @@
     <!-- Education -->
     <section class="band band-white" id="education">
       <div class="wrap">
-        <h2 class="section-label">Education &amp; Experience</h2>
+        <h2 class="section-label" data-i18n="education.title">Education &amp; Experience</h2>
         <div class="edu-grid">
           <div>
-            <h3 class="subhead">Education</h3>
+            <h3 class="subhead" data-i18n="education.sub.edu">Education</h3>
             <ul class="edu-list">
               <li>
                 <span class="when">2026.09 – Present</span>
-                <p>PhD student in Data Science and Analytics (DSA), <strong>The Hong Kong University of Science and Technology (Guangzhou)</strong>, Guangzhou, China.</p>
+                <p data-i18n-html="education.phd">PhD student in Data Science and Analytics (DSA), <strong>The Hong Kong University of Science and Technology (Guangzhou)</strong>, Guangzhou, China.</p>
               </li>
               <li>
                 <span class="when">2023.09 – 2026.06</span>
-                <p>Master of Science in Artificial Intelligence, <strong>Shenzhen University</strong>, Shenzhen, China.</p>
+                <p data-i18n-html="education.master">Master of Science in Artificial Intelligence, <strong>Shenzhen University</strong>, Shenzhen, China.</p>
               </li>
               <li>
                 <span class="when">2019.09 – 2023.06</span>
-                <p>Bachelor of Science in Computer Science and Technology, <strong>Hubei University of Technology</strong>, Wuhan, China.</p>
+                <p data-i18n-html="education.bachelor">Bachelor of Science in Computer Science and Technology, <strong>Hubei University of Technology</strong>, Wuhan, China.</p>
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="subhead">Internships</h3>
+            <h3 class="subhead" data-i18n="education.sub.intern">Internships</h3>
             <div class="intern-card">
               <span class="when">2025.07 – 2026.09</span>
-              <p>Research Assistant, <strong>HKUST-GZ</strong>, China.</p>
+              <p data-i18n-html="education.intern">Research Assistant, <strong>HKUST-GZ</strong>, China.</p>
             </div>
           </div>
         </div>
@@ -482,8 +501,8 @@
     <!-- Contact — Apple-style closing CTA -->
     <section class="band band-cta" id="contact">
       <div class="wrap narrow contact-block">
-        <h2 class="contact-title">Let’s connect.</h2>
-        <p class="contact-copy">
+        <h2 class="contact-title" data-i18n="contact.title">Let’s connect.</h2>
+        <p class="contact-copy" data-i18n="contact.copy">
           Open to research discussions on embodied AI, spatial intelligence, and cross-view geo-localization.
         </p>
         <div class="hero-cta">
@@ -500,13 +519,14 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>© <span id="year">2026</span> Ziqian Mo (莫子谦). Content from
+      <p data-i18n-html="footer.copy">© <span id="year">2026</span> Ziqian Mo (莫子谦). Content from
         <a href="https://ziqianmo.github.io/" target="_blank" rel="noopener">ziqianmo.github.io</a>.
       </p>
       <p class="site-footer-scholar" id="scholar-footer-meta" hidden></p>
     </div>
   </footer>
 
+  <script src="js/i18n.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
